@@ -11,13 +11,15 @@ CREATE DATABASE bank_database;
 
 ## 2. Create 6 tables in this DB named: `account`, `branch`, `depositor`, `customer`, `loan`, and `borrower`
 
+**Create Account:** 
+
 ```sql
 CREATE TABLE account (account_number char(5), branch_name varchar(16), balance int(7));
 CREATE TABLE branch (branch_name varchar(16), branch_city varchar(16), assets int(8));
 CREATE TABLE depositor (customer_name varchar(16), account_number char(5));
 CREATE TABLE customer (customer_name varchar(16), customer_street varchar(32), customer_city varchar(16));
 CREATE TABLE loan (loan_number char(5), branch_name varchar(16), amount int(8));
-CREATE TABLE borrower (customer_name varchar(16), load_number char(8));
+CREATE TABLE borrower (customer_name varchar(16), loan_number char(8));
 ```
 ![Kaniz154](images/2.png)
 
