@@ -109,3 +109,160 @@ INSERT INTO borrower VALUES("Smith", "L-23");
 INSERT INTO borrower VALUES("Williams", "L-17");
 ```
 ![Kaniz154](images/8.png)
+
+## Primary Key after table creation
+
+**Account:**
+
+```sql
+ALTER TABLE account ADD PRIMARY KEY(account_number);
+```
+![Kaniz154](images/9.png)
+
+**Branch:**
+
+```sql
+ALTER TABLE branch ADD PRIMARY KEY(branch_name);
+```
+![Kaniz154](images/10.png)
+
+**Depositor:**
+
+```sql
+ALTER TABLE depositor ADD PRIMARY KEY(customer_name, account_number);
+```
+![Kaniz154](images/11.png)
+
+**Customer:**
+
+```sql
+ALTER TABLE customer ADD PRIMARY KEY(customer_name);
+```
+![Kaniz154](images/11.png)
+
+**Loan:**
+
+```sql
+ALTER TABLE loan ADD PRIMARY KEY(loan_number);
+```
+![Kaniz154](images/12.png)
+
+**Borrower:**
+
+```sql
+ALTER TABLE borrower ADD PRIMARY KEY(customer_name, loan_number);
+```
+![Kaniz154](images/13.png)
+
+# Lab Tasks
+
+## 1. Find the names of all branches in the `loan` relation
+
+```sql
+SELECT branch_name FROM loan;
+```
+![Kaniz154](images/14.png)
+
+## 1. Find the names of all branches in the `loan` relation
+
+```sql
+SELECT branch_name FROM loan;
+```
+![Kaniz154](images/14.png)
+
+## 2. Find all loan numbers for loans made at the `Perryridge` branch with loan amounts greater than 300
+
+```sql
+SELECT loan_number FROM loan WHERE branch_name="Perryridge" AND amount > 300;
+```
+![Kaniz154](images/15.png)
+
+## 3. Find all the loan numbers of the customers who has loan either `Perryridge` branch or `Downtown` branch
+
+```sql
+SELECT loan_number FROM loan WHERE branch_name IN("Perryridge", "Downtown");
+```
+![Kaniz154](images/16.png)
+
+## 4. Find all the loan numbers of the customers who has loan either `Perryridge` branch or `Downtown` branch or `Mianus` branch
+
+```sql
+SELECT loan_number FROM loan WHERE branch_name IN("Perryridge", "Downtown", "Mianus");
+```
+![Kaniz154](images/17.png)
+
+## 5. Find the names of all customers who are not from `Stamford` or `Princeton` or `Harrison` city
+
+```sql
+SELECT customer_name FROM customer WHERE customer_city NOT IN("Stamford", "Princeton", "Harrison");
+```
+
+![Kaniz154](images/18.png)
+
+## 6. Find the largest, minimum, and average account balance in the `account` relation
+
+```sql
+SELECT Max(balance), Min(balance), Avg(balance) FROM account;
+```
+![Kaniz154](images/19.png)
+
+## 7. Find the total number of customer from `customer` relation
+
+```sql
+SELECT Count(customer_name) FROM customer;
+```
+![Kaniz154](images/20.png)
+
+## 8. Find the loan number of those loans with loan amounts between 400 and 800
+
+```sql
+SELECT loan_number FROM loan WHERE amount > 400 AND amount < 800;
+```
+or
+```sql
+SELECT loan_number FROM loan WHERE amount BETWEEN 401 AND 799;
+
+```
+![Kaniz154](images/21.png)
+
+## 9. Find the names of all customers whose name start with `G`
+
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE "G%";
+```
+![Kaniz154](images/22.png)
+
+## 10. Find the names of all customers whose name ends with `s`
+
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE "%s";
+```
+![Kaniz154](images/23.png)
+
+## 11. Find the names of all customers whose name has a `o` in 2nd position
+
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE "_o%";
+```
+![Kaniz154](images/24.png)
+
+## 12. Find the names of all customers whose name has a `o` in any position except 1st and last letter
+
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE "%o%";
+```
+![Kaniz154](images/25.png)
+
+## 13. Find the length of the name of all customers from `Customer` relation
+
+```sql
+SELECT customer_name, Length(customer_name) FROM customer;
+```
+![Kaniz154](images/26.png)
+
+## 14. Find 1st three characters of each customer name from `customer` relation
+
+```sql
+SELECT customer_name, SUBSTR(customer_name, 1, 3) FROM customer;
+```
+![Kaniz154](images/27.png)
