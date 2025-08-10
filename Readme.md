@@ -8,21 +8,31 @@ http://localhost/phpmyadmin/
 
 ## Table of Contents
 
+## 📑 Table of Contents
+
 1. [Create Database](#1-create-database)  
 2. [Create Table](#2-create-table)  
 3. [Inserting Data Into Table](#3-inserting-data-into-table)  
 4. [Change Column Name](#4-change-column-name)  
-5. [Deleting Row Data](#5-deleting-row-data)  
+5. [Deleting Row Data](#5-deleting-column-data)  
 6. [Primary Key](#6-primary-key)  
-   - [When creating table](#when-creating-table)  
+   - [When creating table](#when-table-creation)  
    - [After table creation](#after-table-creation)  
 7. [Composite Primary Key (Multiple Columns)](#7-composite-primary-key-multiple-columns)  
-   - [When creating table](#when-creating-table-1)  
+   - [When creating table](#when-table-creation-1)  
    - [After table creation](#after-table-creation-1)  
 8. [Drop a Primary Key](#8-drop-a-primary-key)  
 9. [String Functions](#9-string-functions)  
    - [Find String Length](#find-string-length)  
    - [Get First 3 Characters of a Name](#get-first-3-characters-of-a-name)  
+   - [Pattern Matching](#pattern-matching)  
+   - [LENGTH Function](#length-function)  
+   - [SUBSTR for Substring](#substr-for-substring)  
+10. [Filter Data](#10-filter-data)  
+    - [Filtering Using IN](#filtering-using-in)  
+    - [Filtering with WHERE Clause](#filtering-with-where-clause)  
+    - [Filtering Using NOT IN](#filtering-using-not-in)  
+11. [COUNT Function](#11-count-function)
 
 ## 1. Create Database
 ```sql
@@ -140,4 +150,83 @@ SELECT column_name, SUBSTR(column_name, 1, 3) FROM table_name;
 **Example:**
 ```sql
 SELECT customer_name, SUBSTR(customer_name, 1, 3) FROM customer;
+```
+### Pattern Matching
+***Starts with:***
+```sql
+WHERE column_name LIKE 'A%'
+```
+**Example:**
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE 'A%';
+```
+***Ends with:***
+```sql
+WHERE column_name LIKE '%s'
+```
+**Example:**
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE '%s';
+```
+***Specific position:***
+```sql
+WHERE column_name LIKE '_o%'
+```
+**Example:**
+```sql
+SELECT customer_name FROM customer WHERE customer_name LIKE '_o%';
+```
+### LENGTH Function
+
+```sql
+SELECT column_name, LENGTH(column_name) FROM table_name;
+```
+**Example:**
+```sql
+SELECT customer_name, LENGTH(customer_name) FROM customer;
+```
+### SUBSTR for Substring
+
+```sql
+SELECT column_name, SUBSTR(column_name, start, length) FROM table_name;
+```
+**Example:**
+```sql
+SELECT customer_name, SUBSTR(customer_name, 1, 3) FROM customer;
+```
+
+## 10. Filter Data
+###  Filtering Using IN
+```sql
+SELECT column_name FROM table_name WHERE column_name IN (value1, value2, ...);
+```
+**Example:**
+```sql
+SELECT loan_number FROM loan WHERE branch_name IN ('Perryridge', 'Downtown');
+```
+###  Filtering with WHERE Clause
+```sql
+SELECT column_name FROM table_name WHERE condition;
+```
+**Example:**
+```sql
+SELECT loan_number FROM loan WHERE branch_name = 'Perryridge' AND amount > 300;
+```
+### Filtering Using NOT IN
+```sql
+SELECT column_name FROM table_name WHERE column_name NOT IN (value1, value2, ...);
+```
+**Example:**
+```sql
+SELECT customer_name FROM customer WHERE customer_city NOT IN ('Stamford', 'Princeton', 'Harrison');
+```
+
+## 11. COUNT Function
+
+```sql
+SELECT COUNT(column_name) FROM table_name;
+```
+**Example:**
+```sql
+SELECT COUNT(customer_name) FROM customer;
 ```
