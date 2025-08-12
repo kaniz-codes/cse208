@@ -42,7 +42,15 @@ CREATE DATABASE database_name;
 ```sql
 CREATE DATABASE Kaniz_154;
 ```
-## 2. Create Table
+## Delete Database
+```sql
+DROP DATABASE database_name;
+```
+**Example:**
+```sql
+DROP DATABASE Kaniz_154;
+```
+## Create Table
 ```sql
 CREATE TABLE table_name (
     column1 datatype,
@@ -59,7 +67,7 @@ CREATE TABLE customer (
     customer_city VARCHAR(30)
 );
 ```
-## 3. Inserting Data Into Table
+## Inserting Data Into Table
 ```sql
 INSERT INTO table_name VALUES (value1, value2, ...);
 ```
@@ -67,7 +75,7 @@ INSERT INTO table_name VALUES (value1, value2, ...);
 ```sql
 INSERT INTO customer VALUES("Kaniz", "Fatema", "Baymax");
 ```
-## 4. Change Column Name
+## Change Column Name
 To rename a column in a table:
 
 ```sql
@@ -79,7 +87,7 @@ ALTER TABLE customer CHANGE c_street customer_street VARCHAR(50);
 ```
 This changes the column `c_street` to `customer_street` with a new data type of `VARCHAR(50)`.
 
-## 5. Deleting Column Data
+## Deleting Column Data
 
 ```sql
 DELETE FROM table_name WHERE condition;
@@ -89,7 +97,7 @@ DELETE FROM table_name WHERE condition;
 DELETE FROM customer WHERE customer_name = 'Kaniz';
 ```
 
-## 6. Primary Key 
+## Primary Key 
 ### When table creation:
 Here, `customer_name` is declared as the primary key during table creation.
 ```sql
@@ -106,7 +114,7 @@ CREATE TABLE customer
 ALTER TABLE customer ADD PRIMARY KEY(customer_name);
 ```
 
-## 7. Composite Primary Key (Multiple Columns) 
+## Composite Primary Key (Multiple Columns) 
 ### When table creation:
 ```sql
 ALTER TABLE depositor ADD PRIMARY KEY (customer_name, account_number);
@@ -123,7 +131,7 @@ ADD PRIMARY KEY (column1, column2);
 ALTER TABLE depositor
 ADD PRIMARY KEY (customer_name, account_number);
 ```
-## 8. Drop a Primary Key
+## Drop a Primary Key
 To remove a primary key from a table:
 ```sql
 ALTER TABLE table_name 
@@ -134,7 +142,7 @@ DROP PRIMARY KEY;
 ALTER TABLE customer 
 DROP PRIMARY KEY;
 ```
-## 9. String Functions
+## String Functions
 ###  Find String Length
 ```sql
 SELECT column_name, LENGTH(column_name) FROM table_name;
@@ -195,7 +203,7 @@ SELECT column_name, SUBSTR(column_name, start, length) FROM table_name;
 SELECT customer_name, SUBSTR(customer_name, 1, 3) FROM customer;
 ```
 
-## 10. Filter Data
+## Filter Data
 ###  Filtering Using IN
 ```sql
 SELECT column_name FROM table_name WHERE column_name IN (value1, value2, ...);
@@ -221,7 +229,7 @@ SELECT column_name FROM table_name WHERE column_name NOT IN (value1, value2, ...
 SELECT customer_name FROM customer WHERE customer_city NOT IN ('Stamford', 'Princeton', 'Harrison');
 ```
 
-## 11. COUNT Function
+## COUNT Function
 
 ```sql
 SELECT COUNT(column_name) FROM table_name;
