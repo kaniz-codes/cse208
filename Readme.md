@@ -7,9 +7,6 @@ http://localhost/phpmyadmin/
 ```
 
 ## Table of Contents
-
-## 📑 Table of Contents
-
 1. [Create Database](#1-create-database)  
 2. [Create Table](#2-create-table)  
 3. [Inserting Data Into Table](#3-inserting-data-into-table)  
