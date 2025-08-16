@@ -7,25 +7,34 @@ http://localhost/phpmyadmin/
 ```
 
 ## Table of Contents
-1. [Create Database](#1-create-database)  
-2. [Create Table](#2-create-table)  
-3. [Inserting Data Into Table](#3-inserting-data-into-table)  
-4. [Change Column Name](#4-change-column-name)  
-5. [Deleting Row Data](#5-deleting-column-data)  
-6. [Primary Key](#6-primary-key)  
+####  Database Operations
+- [Create Database](#1-create-database)
+- [Delete Database](#1-create-database)
+#### Table Operations
+- [Create Table](#2-create-table)  
+- [Inserting Data Into Table](#3-inserting-data-into-table)  
+- [Change Column Name](#4-change-column-name) 
+- [Deleting Column Data](#5-deleting-column-data) 
+- [Deleting Row Data](#5-deleting-row-data)
+#### Keys  
+- [Primary Key](#6-primary-key)  
    - [When creating table](#when-table-creation)  
    - [After table creation](#after-table-creation)  
-7. [Composite Primary Key (Multiple Columns)](#7-composite-primary-key-multiple-columns)  
+- [Composite Primary Key (Multiple Columns)](#7-composite-primary-key-multiple-columns)  
    - [When creating table](#when-table-creation-1)  
    - [After table creation](#after-table-creation-1)  
-8. [Drop a Primary Key](#8-drop-a-primary-key)  
-9. [String Functions](#9-string-functions)  
+- [Drop a Primary Key](#8-drop-a-primary-key)
+#### String Functions    
    - [Find String Length](#find-string-length)  
    - [Get First 3 Characters of a Name](#get-first-3-characters-of-a-name)  
    - [Pattern Matching](#pattern-matching)  
    - [LENGTH Function](#length-function)  
-   - [SUBSTR for Substring](#substr-for-substring)  
-10. [Filter Data](#10-filter-data)  
+   - [SUBSTR for Substring](#substr-for-substring)
+#### Aggregate Functions
+   - [SUM]
+   - [AVG]
+   - [MIN and MAX]
+#### Filtering Data 
     - [Filtering Using IN](#filtering-using-in)  
     - [Filtering with WHERE Clause](#filtering-with-where-clause)  
     - [Filtering Using NOT IN](#filtering-using-not-in)  
