@@ -30,15 +30,6 @@ http://localhost/phpmyadmin/
    - [Pattern Matching](#pattern-matching)  
    - [LENGTH Function](#length-function)  
    - [SUBSTR for Substring](#substr-for-substring)
-#### Aggregate Functions
-   - [SUM]
-   - [AVG]
-   - [MIN and MAX]
-#### Filtering Data 
-    - [Filtering Using IN](#filtering-using-in)  
-    - [Filtering with WHERE Clause](#filtering-with-where-clause)  
-    - [Filtering Using NOT IN](#filtering-using-not-in)  
-11. [COUNT Function](#11-count-function)
 
 ## 1. Create Database
 ```sql
