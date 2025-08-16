@@ -17,10 +17,10 @@ http://localhost/phpmyadmin/
 - [Deleting Column Data](#5-deleting-column-data) 
 - [Deleting Row Data](#5-deleting-row-data)
 #### Keys  
-- [Primary Key](#6-primary-key)  
+- [Primary Key]
    - [When creating table](#when-table-creation)  
    - [After table creation](#after-table-creation)  
-- [Composite Primary Key (Multiple Columns)](#7-composite-primary-key-multiple-columns)  
+- [Composite Primary Key (Multiple Columns)] 
    - [When creating table](#when-table-creation-1)  
    - [After table creation](#after-table-creation-1)  
 - [Drop a Primary Key](#8-drop-a-primary-key)
