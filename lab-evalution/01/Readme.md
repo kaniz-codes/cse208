@@ -3,15 +3,15 @@ This lab evaluation was on fundamental SQL operations and quries.
 
 ## Table of Contents
 - Set 01: Student Database
-    - [Q.0 Creating a new database](#q0-creating-a-new-database)
-    - [Q.0.1 Create table named "Student"](#q01-create-table-named-student)
-    - [Q.0.2 Insert values into `Student` table](#q02-insert-values-into-student-table)
-    - [Q1. Find the total number of students](#q1-find-the-total-number-of-students)
-    - [Q2. Find the last 3 digits from the contact number for each student](#q2-find-the-last-3-digits-from-the-contact-number-for-each-student)
-    - [Q3. Find students older than the average age](#q3-find-students-older-than-the-average-age)
-    - [Q4. Find students with the highest age](#q4-find-students-with-the-highest-age)
-    - [Q5. Find students with 'a' in 2nd and 'g' in 4th position in address](#q5-find-students-with-a-in-2nd-and-g-in-4th-position-in-address)
-    - [Q6. Increase the age of each student by 2%](#q6-increase-the-age-of-each-student-by-2)
+     [Q.0: Creating a new database](#q0-creating-a-new-database)
+  - [Q.0.1: Create table named `Student`](#q01-create-table-named-student)
+  - [Q.0.2: Insert values into `Student` table](#q02-insert-values-on-student-table)
+  - [Q1: Find the `total number of students`](#q1-find-the-total-number-of-studentscolumn-name-should-be-total-number-of-students)
+  - [Q2: Find the `last 3 digits` from the contact number for each student](#q2-find-the-last-3-digits-from-the-contact-number-for-each-student)
+  - [Q3: Find students `older than the average age`](#q3-find-the-id-and-age-of-those-students-which-has-an-age-greater-than-the-avg-age-of-all-students)
+  - [Q4: Find students with the `highest age`](#q4-find-the-name-of-the-students-with-the-highest-age)
+  - [Q5: Find students with `a` in 2nd and `g` in 4th position in address](#q5-find-the-id-of-those-students-whose-address-has-a-in-2nd-position-and-g-in-4th-position)
+  - [Q6: Increase the age of each student by `2%`](#q6-increase-the-age-of-each-student-by-2)
 
 ## Set 01: Student Database
 Operating SQL operations on `student` table
