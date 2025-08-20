@@ -81,7 +81,7 @@ INSERT INTO tbl_name VALUES (value1, value2, ...);
 ALTER TABLE tbl_name CHANGE old_col_name new_col_name new_data_type;
 ```
 
-> This changes the column `c_street` to `customer_street` with a new data type of `VARCHAR(50)`.
+> Renames a column from `old_col_name` to `new_col_name` and optionally changes its data type `new_data_type` without affecting other data.
 
 ## Deleting Column Data
 
@@ -107,11 +107,12 @@ ALTER TABLE tbl_name ADD PRIMARY KEY(col_name);
 ```
 
 ## Composite Primary Key (Multiple Columns) 
+A composite primary key ensures that the combination of two (or more) columns is unique for every row in the table.
 ### When table creation:
 ```sql
 ALTER TABLE tbl_name ADD PRIMARY KEY (col_name, col_number);
 ```
-> This ensures that each combination of `customer_name` and `account_number` is unique.
+> This ensures that the combination of `col_name` and `col_number` is unique for every row. Each pair of values must be distinct.
 
 ###  After table creation:
 ```sql
