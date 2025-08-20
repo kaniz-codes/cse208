@@ -27,7 +27,6 @@ http://localhost/phpmyadmin/
 #### Composite Primary Key (Multiple Columns)
 - [When creating table](#when-table-creation-1)  
 - [After table creation](#after-table-creation-1)  
-
 - [Drop a Primary Key](#drop-a-primary-key)
 
 ### 4. String Functions
