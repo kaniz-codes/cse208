@@ -52,6 +52,7 @@ or
 ```sql
 SELECT Count(std_ID) "Total number of students" FROM student
 ```
+> [!NOTE]
 > If `std_ID` can be NULL, then:
 > - `COUNT(*)` → total rows (including NULL IDs).
 > - `COUNT(std_ID)` → only students with IDs.

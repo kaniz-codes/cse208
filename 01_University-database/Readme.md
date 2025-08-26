@@ -6,9 +6,12 @@
 ```sql
 CREATE DATABASE BUBT_154;
 ```
+![Kaniz154](images/1.png)
+
 ## 2. Create 3 tables in this DB named `Student`, `Faculty`, `Course`
 
-> **Note: Data Types**
+> [!NOTE]
+> **Data Types**
 > 
 > - `INT(n)`: Whole numbers (up to 11 digits)
 > - `CHAR(n)`: Fixed-length text (up to 255 characters)
@@ -16,7 +19,8 @@ CREATE DATABASE BUBT_154;
 > - `FLOAT(n.m)`: Decimal numbers (approximate precision).  
 >   Here, *n* = total digits, *m* = digits after the decimal point.
 
-> 💡 **Tip:** The best practice is to defining size limits like 1, 2, 4, 8, 16, etc., as it's powers of 2 (2⁰, 2¹, 2²...) . These are memory-efficient in computing.
+> [!TIP]
+> The best practice is to defining size limits like 1, 2, 4, 8, 16, etc., as it's powers of 2 (2⁰, 2¹, 2²...) . These are memory-efficient in computing.
 
 **Student:** 
 
