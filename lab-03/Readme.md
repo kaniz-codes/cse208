@@ -3,7 +3,7 @@
 **Name** Kaniz Fatema  
 **ID:** 20245103154
 
-> [!IMPORTANT]
+
 > The Tables Used Here Are from **Bank Database**
 
 ## 1. Find the number of customers from all cities in the `customer` relation
