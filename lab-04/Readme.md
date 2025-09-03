@@ -1,111 +1,112 @@
-# Lab 04
+# LAB 4
+
 **Name** Kaniz Fatema  
 **ID:** 20245103154
 
-## 1. Creating a new database:
+## Create a DB Name "instructor154"
 
 ```sql
-CREATE DATABASE bank_database;
+CREATE DATABASE instructor154
+```
+
+## Create 1 tables in this DB named "Instructor" and "Teaches"
+
+### Instructor
+```sql
+CREATE TABLE Instructor (ID int(8), Name varchar(32), dept_name varchar(16), Salary int(16))
 ```
 ![Kaniz154](images/1.png)
 
-## 2. Create 6 tables in this DB named: `account`, `branch`, `depositor`, `customer`, `loan`, and `borrower`
-
-**Create Account:** 
-
+### Teaches
 ```sql
-CREATE TABLE account (account_number char(5), branch_name varchar(16), balance int(7));
-CREATE TABLE branch (branch_name varchar(16), branch_city varchar(16), assets int(8));
-CREATE TABLE depositor (customer_name varchar(16), account_number char(5));
-CREATE TABLE customer (customer_name varchar(16), customer_street varchar(32), customer_city varchar(16));
-CREATE TABLE loan (loan_number char(5), branch_name varchar(16), amount int(8));
-CREATE TABLE borrower (customer_name varchar(16), loan_number char(8));
+CREATE TABLE Teaches (ID int(8), c_ID varchar(32), section_ID int(2))
 ```
 ![Kaniz154](images/2.png)
 
-## 3. Inserting data into the tables
+## Insert values on "Instructor" and "Teaches"
 
-**Account:**
-
+**Instructor**
 ```sql
-INSERT INTO account VALUES("A-101", "Downtown", 500);
-INSERT INTO account VALUES("A-102", "Perryridge", 400);
-INSERT INTO account VALUES("A-201", "Brighton", 900);
-INSERT INTO account VALUES("A-215", "Mianus", 700);
-INSERT INTO account VALUES("A-217", "Brighton", 750);
-INSERT INTO account VALUES("A-222", "Redwood", 700);
-INSERT INTO account VALUES("A-305", "Round Hill", 350);
+INSERT INTO instructor VALUES(10101, "Srinivasan", "CSE", 65000);
+INSERT INTO instructor VALUES(12121, "Wu", "FIN", 90000);
+INSERT INTO instructor VALUES(15151, "Mozart", "Music", 40000);
+INSERT INTO instructor VALUES(22222, "Einstein", "Physics", 90000);
+INSERT INTO instructor VALUES(32343, "Said", "History", 60000);
+INSERT INTO instructor VALUES(33456, "Gold", "Physics", 87000);
+INSERT INTO instructor VALUES(45565, "Katz", "CSE", 75000);
+INSERT INTO instructor VALUES(58583, "Cali", "History", 62000);
+INSERT INTO instructor VALUES(76543, "Singh", "FIN", 80000);
+INSERT INTO instructor VALUES(76766, "Crick", "Bio", 72000);
+INSERT INTO instructor VALUES(83821, "Brandt", "CSE", 92000);
+INSERT INTO instructor VALUES(98345, "Kin", "EEE", 80000);
 ```
 ![Kaniz154](images/3.png)
 
-**Branch:**
+**Teaches**
 
 ```sql
-INSERT INTO branch VALUES("Brighton", "Brooklyn", 7100000);
-INSERT INTO branch VALUES("Downtown", "Brooklyn", 9000000);
-INSERT INTO branch VALUES("Mianus", "Horseneck", 400000);
-INSERT INTO branch VALUES("North Town", "Rye", 3700000);
-INSERT INTO branch VALUES("Perryridge", "Horseneck", 1700000);
-INSERT INTO branch VALUES("Pownal", "Bennington", 300000);
-INSERT INTO branch VALUES("Redwood", "Palo Alto", 2100000);
-INSERT INTO branch VALUES("Round Hill", "Horseneck", 8000000);
+INSERT INTO teaches VALUES(10101, "CSE_101", 1);
+INSERT INTO teaches VALUES(12121, "CSE_111", 2);
+INSERT INTO teaches VALUES(13131, "CSE_311", 3);
 ```
 ![Kaniz154](images/4.png)
 
-**Depositor:**
+## Q1. Perform Cartesian Product Operation between these two relations.
 
 ```sql
-INSERT INTO depositor VALUES("Hayes", "A-102");
-INSERT INTO depositor VALUES("Johnson", "A-101");
-INSERT INTO depositor VALUES("Johnson", "A-201");
-INSERT INTO depositor VALUES("Jones", "A-217");
-INSERT INTO depositor VALUES("Lindsay", "A-222");
-INSERT INTO depositor VALUES("Smith", "A-215");
-INSERT INTO depositor VALUES("Turner", "A-305");
+SELECT * FROM instructor, teaches
 ```
 ![Kaniz154](images/5.png)
 
-**Customer:**
+## Q2. Find  those instructors who teaches any of the courses.
 
 ```sql
-INSERT INTO customer VALUES("Adams", "Spring", "Pittsfield");
-INSERT INTO customer VALUES("Brooks", "Senator", "Brooklyn");
-INSERT INTO customer VALUES("Curry", "North", "Rye");
-INSERT INTO customer VALUES("Glenn", "Sand Hill", "Woodside");
-INSERT INTO customer VALUES("Green", "Walnut", "Stamford");
-INSERT INTO customer VALUES("Hayes", "Main", "Harrison");
-INSERT INTO customer VALUES("Johnson", "Alma", "Palo Alto");
-INSERT INTO customer VALUES("Jones", "Main", "Harrison");
-INSERT INTO customer VALUES("Lindsay", "Park", "Pittsfield");
-INSERT INTO customer VALUES("Smith", "North", "Rye");
-INSERT INTO customer VALUES("Turner", "Putnam", "Stamford");
-INSERT INTO customer VALUES("Williams", "Nassau", "Princeton");
+Select Name, c_ID from instructor INNER JOIN teaches where Instructor.ID=teaches.ID;
+```
+OR
+```sql
+Select Name, c_ID from instructor, teaches where Instructor.ID=teaches.ID;
 ```
 ![Kaniz154](images/6.png)
 
-**Loan:**
+## Q3. Find only instructor names and course id for instructors in the Computer Science   department. 
 
 ```sql
-INSERT INTO loan VALUES("L-11", "Round Hill", 900);
-INSERT INTO loan VALUES("L-14", "Downtown", 1500);
-INSERT INTO loan VALUES("L-15", "Perryridge", 1500);
-INSERT INTO loan VALUES("L-16", "Perryridge", 1300);
-INSERT INTO loan VALUES("L-17", "Downtown", 1000);
-INSERT INTO loan VALUES("L-23", "Redwoord", 2000);
-INSERT INTO loan VALUES("L-93", "Mianus", 500);
+Select name, c_ID from instructor INNER JOIN teaches where Instructor.ID=teaches.ID AND dept_name= "CSE";
 ```
 ![Kaniz154](images/7.png)
 
-**Borrower:**
+## Q4. Find the total no. of tuples in “Instructor” relation.
 
 ```sql
-INSERT INTO borrower VALUES("Adams", "L-16");
-INSERT INTO borrower VALUES("Curry", "L-93");
-INSERT INTO borrower VALUES("Hayes", "L-15");
-INSERT INTO borrower VALUES("Johnson", "L-14");
-INSERT INTO borrower VALUES("Jones", "L-17");
-INSERT INTO borrower VALUES("Smith", "L-11");
-INSERT INTO borrower VALUES("Smith", "L-23");
-INSERT INTO borrower VALUES("Williams", "L-17");
+Select count(*) from Instructor
 ```
 ![Kaniz154](images/8.png)
+
+## Q5. Answer Q2 using Natural Join.
+
+```sql
+Select name, c_ID from instructor NATURAL JOIN teaches
+```
+![Kaniz154](images/9.png)
+
+## Q6. Answer Q3 using Natural Join.
+
+```sql
+Select name, c_ID from instructor NATURAL JOIN teaches where Instructor.ID=teaches.ID AND dept_name= "CSE";
+```
+![Kaniz154](images/10.png)
+
+## Q7. Perform Left Outer Join.
+
+```sql
+Select * from instructor NATURAL LEFT OUTER JOIN teaches;
+```
+![Kaniz154](images/11.png)
+
+## Q8. Perform Right Outer Join.
+
+```sql
+Select * from instructor NATURAL RIGHT OUTER JOIN teaches
+```
+![Kaniz154](images/12.png)
