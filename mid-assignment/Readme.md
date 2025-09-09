@@ -183,6 +183,42 @@ WHERE balance < (SELECT AVG(balance) FROM account);
  ![Question 3.11](images/Q3.11.1.png)
 **Relational Algebra:**
 
+ ### 12. Show outputs of `JOIN Operations`
+Consider the following tables `loan` and `borrower`. Perform `RIGHT OUTER JOIN`,
+`LEFT OUTER JOIN`, `INNER JOIN`, and `NATURAL JOIN` operations and show the results.
+
+**RIGHT OUTER JOIN:**
+ ```sql
+SELECT * FROM loan NATURAL RIGHT OUTER JOIN borrower;
+ ```
+ **Output:**
+
+![Question 3.12](images/Q3.12.png)
+ 
+**LEFT OUTER JOIN:**
+ ```sql
+SELECT * FROM loan NATURAL LEFT OUTER JOIN borrower;
+ ```
+ **Output:**
+
+![Question 3.12.1](images/Q3.12.1.png)
+ 
+**INNER JOIN:**
+ ```sql
+SELECT * FROM loan INNER JOIN borrower;
+ ```
+ **Output:**
+
+![Question 3.12.2](images/Q3.12.2.png)
+
+**NATURAL JOIN:**
+ ```sql
+SELECT * FROM loan NATURAL JOIN borrower;
+ ```
+ **Output:**
+
+![Question 3.12.3](images/Q3.12.3.png)
+
  ## Question 4. Identify all possible superkeys and candidate keys.
 
  Given a relation:
