@@ -19,8 +19,10 @@
  SELECT branch_name, AVG(amount) "Average amount" 
  FROM loan GROUP BY branch_name;
  ```
-  **Relational Algebra**
-
+**Relational Algebra**
+```math
+\Large_{branch\_name}G_{AVG(amount)\ as\ "Average\ Loan"} (Loan)
+```
  **Output:**
 
  ![Question 3.1](images/Q3.1.png)
@@ -31,6 +33,12 @@
  ```sql
 SELECT * FROM customer WHERE customer_street LIKE "%ss%";
  ```
+**Relational Algebra**
+
+```math
+\Largeπ_{customer\_name} (σ_{customer\_street\ = \ "\%ss\%"} (Customer))
+```
+
 **Output:**
 
  ![Question 3.2](images/Q3.2.png)
@@ -42,6 +50,12 @@ SELECT * FROM customer WHERE customer_street LIKE "%ss%";
 SELECT customer_name, loan_number
 FROM borrower;
  ```
+**Relational Algebra**
+
+```math
+\Largeπ_{customer\_name,\ loan\_number} (Borrower)
+```
+
 **Output:**
 
  ![Question 3.3](images/Q3.3.png)
@@ -50,9 +64,13 @@ FROM borrower;
 
  **SQL**
  ```sql
-SELECT customer_name FROM borrower, loan 
-WHERE borrower.loan_number=loan.loan_number AND branch_name="Perryridge" ORDER BY customer_name;
+SELECT customer_name FROM loan NATURAL JOIN borrower WHERE branch_name="Perryridge" ORDER BY customer_name;
  ```
+**Relational Algebra**
+
+```math
+ \pi_{customer\_name} (\sigma_{branch\_name = "Perryridge"} (Borrower\ ⨝\ Loan))
+```
 **Output:**
 
  ![Question 3.4](images/Q3.4.png)
@@ -65,6 +83,12 @@ SELECT customer_name FROM borrower
 UNION
 SELECT customer_name FROM depositor;
  ```
+**Relational Algebra**
+
+```math
+\Largeπ_{customer\_name}(Borrower) ∪ π_{customer\_name}(Depositor)
+```
+
 **Output:**
 
  ![Question 3.5](images/Q3.5.png)
@@ -77,6 +101,11 @@ SELECT customer_name
 FROM customer
 WHERE customer_street LIKE '%Main%';
  ```
+**Relational Algebra**
+
+```math
+\Largeπ_{customer\_name} (σ_{customer\_street\ = \ "\%Main\%"} (Customer))
+```
 **Output:**
 
  ![Question 3.6](images/Q3.6.png)
@@ -96,8 +125,14 @@ FROM loan GROUP BY branch_name HAVING AVG(amount) > 1500;
 
  **SQL**
  ```sql
-Select count(*) from customer
+Select count(*)"Num of Tuples" from customer
  ```
+**Relational Algebra:**
+
+```math
+\Large G_{COUNT(Num\_of\_Tuples)} (Customer)
+```
+
 **Output:**
 
  ![Question 3.8](images/Q3.8.png)
@@ -111,6 +146,11 @@ SELECT branch_name,
 FROM account
 GROUP BY branch_name;
  ```
+ **Relational Algebra:**
+
+```math
+branch\_name \Large G_{AVG(Avg\_balance).MAX(Max\_balance)} (Customer)
+```
 **Output:**
 
  ![Question 3.9](images/Q3.9.png)
@@ -118,10 +158,15 @@ GROUP BY branch_name;
 ### 10. Find the names of all those customers who have a loan at Perryridge branch.
  **SQL**
  ```sql
-Select customer_name 
-from borrower,loan 
-where borrower.loan_number= loan.loan_number and branch_name="Perryridge"
+SELECT customer_name
+FROM borrower NATURAL JOIN loan
+WHERE branch_name = "Perryridge";
  ```
+ **Relational Algebra:**
+
+```math
+\Large π_{customer\_name} ( σ_{branch\_name="Perryridge"} (Borrower\ ⨝\ Loan))
+```
 **Output:**
 
  ![Question 3.10](images/Q3.10.png)
@@ -136,6 +181,7 @@ WHERE balance < (SELECT AVG(balance) FROM account);
 
  ![Question 3.11](images/Q3.11.png)
  ![Question 3.11](images/Q3.11.1.png)
+**Relational Algebra:**
 
  ## Question 4. Identify all possible superkeys and candidate keys.
 
