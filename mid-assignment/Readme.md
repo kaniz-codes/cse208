@@ -64,7 +64,10 @@ FROM borrower;
 
  **SQL**
  ```sql
-SELECT customer_name FROM loan NATURAL JOIN borrower WHERE branch_name="Perryridge" ORDER BY customer_name;
+SELECT DISTINCT customer_name
+FROM borrower NATURAL JOIN loan
+WHERE branch_name = 'Perryridge'
+ORDER BY customer_name ASC;
  ```
 **Relational Algebra**
 
@@ -117,6 +120,11 @@ WHERE customer_street LIKE '%Main%';
 SELECT branch_name, AVG(amount) AS "Avg Amount"
 FROM loan GROUP BY branch_name HAVING AVG(amount) > 1500;
  ```
+ **Relational Algebra:**
+
+```math
+\Largeγ_{branch\_name,\ AVG(amount)}\ σ_{AVG(amount)\ >\ 1500} (Loan)
+```
 **Output:**
 
  ![Question 3.7](images/Q3.7.png)
@@ -125,7 +133,7 @@ FROM loan GROUP BY branch_name HAVING AVG(amount) > 1500;
 
  **SQL**
  ```sql
-Select count(*)"Num of Tuples" from customer
+Select count(customer_name)"Num of Tuples" from customer
  ```
 **Relational Algebra:**
 
@@ -162,7 +170,7 @@ SELECT customer_name
 FROM borrower NATURAL JOIN loan
 WHERE branch_name = "Perryridge";
  ```
- **Relational Algebra:**
+**Relational Algebra:**
 
 ```math
 \Large π_{customer\_name} ( σ_{branch\_name="Perryridge"} (Borrower\ ⨝\ Loan))
@@ -181,7 +189,12 @@ WHERE balance < (SELECT AVG(balance) FROM account);
 
  ![Question 3.11](images/Q3.11.png)
  ![Question 3.11](images/Q3.11.1.png)
+
 **Relational Algebra:**
+
+```math
+\Large Account ← Account − σ_{balance\ <\ AVG(balance)} (Account)
+```
 
  ### 12. Show outputs of `JOIN Operations`
 Consider the following tables `loan` and `borrower`. Perform `RIGHT OUTER JOIN`,
