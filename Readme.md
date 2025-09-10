@@ -13,4 +13,4 @@ To install XAMPP, watch the following video:
 
 #  Resources
 
-- [SQL Queries](https://www.dataquest.io/cheat-sheet/sql-cheat-sheet/)
+- [SQL Cheatsheet](https://github.com/kaniz-codes/cse208/blob/main/mysqlcheatsheet.md)

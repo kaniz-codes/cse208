@@ -67,7 +67,7 @@ Here's a list of general SQL queries we've used in our lab so far.
 
 ### 7. Union and Intersection Operations
 
-| Operation                   | SQL Command Example                                                              | Relational Algebra Example                      |
+| Operation                   | SQL Command                                                             | Relational Algebra                 |
 |-----------------------------|---------------------------------------------------------------------------------|------------------------------------------------|
 | Union of tables             | `SELECT * FROM table1 UNION SELECT * FROM table2;`                              | `table1 ∪ table2`                               |
 | Union with condition        | `SELECT * FROM table1 WHERE age > 18 UNION SELECT * FROM table2 WHERE age > 18;` | `σ_{age > 18}(table1) ∪ σ_{age > 18}(table2)` |
@@ -78,7 +78,7 @@ Here's a list of general SQL queries we've used in our lab so far.
 
 ### Join Operations
 
-| Operation              | SQL Command Example                                                       | Relational Algebra Example                        |
+| Operation              | SQL Command                                                     | Relational Algebra                         |
 |------------------------|---------------------------------------------------------------------------|--------------------------------------------------|
 | Natural Join           | `SELECT * FROM table1 NATURAL JOIN table2;`                              | `π_column1, column2 (table1 ⨝ table2)`    |
 | Inner Join             | `SELECT * FROM table1 INNER JOIN table2 ;`       | `π_column1, column2 (table1 ⟗ table2)`         |
@@ -88,7 +88,7 @@ Here's a list of general SQL queries we've used in our lab so far.
 
 ### Projection Operation
 
-| Operation            | SQL Command Example                                | Relational Algebra Example               |
+| Operation            | SQL Command                           | Relational Algebra              |
 |----------------------|---------------------------------------------------|-----------------------------------------|
 | Project specific columns | `SELECT column1, column2 FROM table_name;`        | `π_{column1, column2}(table_name)`      |
 
