@@ -35,8 +35,8 @@ Here's a list of general SQL queries we've used in our lab so far.
 
 | Operation                           | SQL Command                                       | Relational Algebra                       |
 |-----------------------------------|----------------------------------------------------------|--------------------------------------------------|
-| Find string length                  | `SELECT LENGTH('Kaniz');`                                | Not typically represented in relational algebra  |
-| Get first 3 characters of a string  | `SELECT SUBSTR('Kaniz', 1, 3);`                          | Not typically represented in relational algebra  |
+| Find string length                  | `SELECT LENGTH('Kaniz');`                                | Not represented in relational algebra  |
+| Get first 3 characters of a string  | `SELECT SUBSTR('Kaniz', 1, 3);`                          | Not represented in relational algebra  |
 | Starts with (LIKE)                  | `SELECT * FROM table_name WHERE column_name LIKE 'A%';`  | σ_{column_name LIKE 'A%'} (table_name)           |
 | Ends with (LIKE)                    | `SELECT * FROM table_name WHERE column_name LIKE '%Z';`  | σ_{column_name LIKE '%Z'} (table_name)           |
 | Contains (LIKE)                     | `SELECT * FROM table_name WHERE column_name LIKE '%AI%';`| σ_{column_name LIKE '%AI%'} (table_name)          |
